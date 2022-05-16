@@ -16,10 +16,11 @@
  */
 
 import {Component, Input, ViewChild} from "@angular/core";
-import {ApiDefinition, ApiEditorComponent} from "apicurio-design-studio";
 import {LoggerService} from "../../services/logger.service";
 import {EditorComponent} from "./editor.component";
 import {WindowRef} from '../../services/window-ref.service';
+import {ApiDefinition} from "../../editor/_models/api.model";
+import {OaiEditorComponent} from "../../editor/oaieditor.component";
 
 
 @Component({
@@ -32,7 +33,7 @@ export class OpenApiEditorComponent implements EditorComponent {
     // @ts-ignore
     @Input() api: ApiDefinition;
 
-    @ViewChild("apiEditor") apiEditor: ApiEditorComponent | undefined;
+    @ViewChild("apiEditor") apiEditor: OaiEditorComponent | undefined;
 
     /**
      * Constructor.

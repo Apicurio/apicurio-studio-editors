@@ -5,4 +5,4 @@ then
   DOCKER_CMD=docker
 fi
 
-$DOCKER_CMD run -it -p 9011:80 apicurio/apicurio-studio-editors
+$DOCKER_CMD run -it -p 9011:8080 apicurio/apicurio-studio-editors

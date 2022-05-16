@@ -16,11 +16,11 @@
  */
 
 import {Component, ViewChild} from "@angular/core";
-import {ApiDefinition} from "apicurio-design-studio";
 import {LoggerService} from "./services/logger.service";
 import {ConfigService} from "./services/config.service";
 import {EditingInfo} from "./models/editingInfo.model";
 import {EditorComponent} from "./components/editors/editor.component";
+import {ApiDefinition} from "./editor/_models/api.model";
 
 @Component({
     selector: "app-root",
