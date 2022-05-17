@@ -9,7 +9,7 @@ $ npm install
 $ npm run start
 ```
 
-Then open your browser (if it doesn't automatically open) to http://localhost:4200/?demo 
+Then open your browser (if it doesn't automatically open) to http://localhost:9011/?demo 
 
 # Build and run (docker)
 To run a production build using docker:
