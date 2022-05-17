@@ -1,8 +1,17 @@
 #!/bin/sh
+DOCKER=docker
 
-if [ "x$DOCKER_CMD" = "x" ]
+if command -v winpty &> /dev/null
 then
-  DOCKER_CMD=docker
+    echo "Found 'winpty', using it via:  'winpty docker'"
+    DOCKER="winpty docker"
 fi
 
-$DOCKER_CMD run -it -p 9011:8080 apicurio/apicurio-studio-editors
+if [ "x$DOCKER_CMD" != "x" ]
+then
+    echo "Override for 'docker' detected.  Using: '$DOCKER_CMD'"
+    DOCKER=$DOCKER_CMD
+fi
+
+echo "Starting up.  Try:  http://localhost:9011?demo
+$DOCKER run -it -p 9011:8080 apicurio/apicurio-studio-editors
