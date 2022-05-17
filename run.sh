@@ -13,5 +13,5 @@ then
     DOCKER=$DOCKER_CMD
 fi
 
-echo "Starting up.  Try:  http://localhost:9011?demo
+echo "Starting up.  Try:  http://localhost:9011?demo"
 $DOCKER run -it -p 9011:8080 apicurio/apicurio-studio-editors
