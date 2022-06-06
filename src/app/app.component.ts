@@ -38,6 +38,7 @@ export class AppComponent {
     config: EditingInfo;
 
     @ViewChild("openapiEditor") openapiEditor: EditorComponent | undefined;
+    @ViewChild("asyncapiEditor") asyncapiEditor: EditorComponent | undefined;
 
     constructor(private logger: LoggerService, private configService: ConfigService) {
         configService.get().then(cfg => {
@@ -65,16 +66,15 @@ export class AppComponent {
                 this.api.type = "OpenAPI20";
             }
 
-            // this.isShowLoading = false;
-            // this.isShowEditor = true;
+            this.isShowLoading = false;
+            this.isShowEditor = true;
         } catch (error) {
             this.logger.error("Error loading HTTP content: %o", error);
         }
     }
 
     private editor(): EditorComponent {
-        // TODO return editor based on content type
-        return this.openapiEditor;
+        return this.config.content.type === "OPENAPI" ? this.openapiEditor : this.asyncapiEditor;
     }
 
 }

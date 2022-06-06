@@ -20,20 +20,20 @@ import {LoggerService} from "../../services/logger.service";
 import {EditorComponent} from "./editor.component";
 import {WindowRef} from "../../services/window-ref.service";
 import {ApiDefinition} from "../../editor/_models/api.model";
-import {OaiEditorComponent} from "../../editor/oaieditor.component";
+import {AaiEditorComponent} from "../../editor/aaieditor.component";
 
 
 @Component({
-    selector: "openapi-editor",
-    templateUrl: "openapi-editor.component.html",
-    styleUrls: ["openapi-editor.component.css"]
+    selector: "asyncapi-editor",
+    templateUrl: "asyncapi-editor.component.html",
+    styleUrls: ["asyncapi-editor.component.css"]
 })
-export class OpenApiEditorComponent implements EditorComponent {
+export class AsyncApiEditorComponent implements EditorComponent {
 
     // @ts-ignore
     @Input() api: ApiDefinition;
 
-    @ViewChild("apiEditor") apiEditor: OaiEditorComponent | undefined;
+    @ViewChild("apiEditor") apiEditor: AaiEditorComponent | undefined;
 
     /**
      * Constructor.
@@ -45,7 +45,7 @@ export class OpenApiEditorComponent implements EditorComponent {
      * Called whenever the API definition is changed by the user.
      */
     public documentChanged(): any {
-        this.logger.info("[OpenApiEditorComponent] Detected a document change");
+        this.logger.info("[AsyncApiEditorComponent] Detected a document change");
         const newValue: ApiDefinition = this.apiEditor.getValue();
         const message: any = {
             type: "apicurio_onChange",

@@ -18,7 +18,6 @@
 export interface EditingInfoContent {
 
     type: string;
-    format: string;
     value: string;
 
 }

@@ -73,7 +73,6 @@ export class ConfigService {
                 const info: EditingInfo = {
                     content: {
                         type: "OPENAPI",
-                        format: "JSON",
                         value: DEMO_CONTENT
                     },
                     features: {
@@ -97,9 +96,10 @@ export class ConfigService {
     private getQueryParam(name: string): string | undefined {
         const query: string = this.winRef.window.location.search.substring(1);
         const vars: string[] = query.split("&");
+        // tslint:disable-next-line:prefer-for-of
         for (let i = 0; i < vars.length; i++) {
             const pair = vars[i].split("=");
-            if (pair[0] == name) {
+            if (pair[0] === name) {
                 if (pair.length > 1) {
                     return pair[1];
                 } else {
