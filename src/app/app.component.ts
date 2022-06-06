@@ -65,8 +65,8 @@ export class AppComponent {
                 this.api.type = "OpenAPI20";
             }
 
-            this.isShowLoading = false;
-            this.isShowEditor = true;
+            // this.isShowLoading = false;
+            // this.isShowEditor = true;
         } catch (error) {
             this.logger.error("Error loading HTTP content: %o", error);
         }

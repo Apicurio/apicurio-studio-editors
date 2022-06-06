@@ -27,7 +27,7 @@
         "js-yaml": "3.13.1",
         "marked": "0.7.0",
         "ngx-bootstrap": "^7.0.0-rc.1",
-        "patternfly": "3.59.1",
+        "patternfly": "3.59.5",
         "pluralize": "7.0.0",
         "rxjs": "~6.6.0",
         "tslib": "^2.0.0",
