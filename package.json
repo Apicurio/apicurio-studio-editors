@@ -5,7 +5,7 @@
         "ng": "ng",
         "start": "ng serve --port 9011",
         "prebuild": "npm run clean",
-        "build": "ng build && npm run generate:fedmods",
+        "build": "ng build --outputHashing=all && npm run generate:fedmods",
         "generate:fedmods": "node scripts/generate_fedmods.js",
         "clean": "rimraf dist"
     },
