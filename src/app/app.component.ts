@@ -15,12 +15,12 @@
  * limitations under the License.
  */
 
-import {Component, ViewChild} from "@angular/core";
-import {LoggerService} from "./services/logger.service";
-import {ConfigService} from "./services/config.service";
-import {EditingInfo} from "./models/editingInfo.model";
-import {EditorComponent} from "./components/editors/editor.component";
-import {ApiDefinition} from "./editor/_models/api.model";
+import { Component, ViewChild } from "@angular/core";
+import { LoggerService } from "./services/logger.service";
+import { ConfigService } from "./services/config.service";
+import { EditingInfo } from "./models/editingInfo.model";
+import { EditorComponent } from "./components/editors/editor.component";
+import { ApiDefinition } from "./editor/_models/api.model";
 
 @Component({
     selector: "app-root",
@@ -31,9 +31,9 @@ export class AppComponent {
     title = "studio-editor";
     api: ApiDefinition;
 
-    isShowLoading: boolean = true;
-    isShowEditor: boolean = false;
-    isShowError: boolean = false;
+    isShowLoading = true;
+    isShowEditor = false;
+    isShowError = false;
 
     config: EditingInfo;
 
@@ -51,7 +51,7 @@ export class AppComponent {
 
     private initContent(): void {
         try {
-            const content: any = JSON.parse(this.config.content.value);
+            const content = JSON.parse(this.config.content.value);
             this.logger.info("[AppComponent] JSON content successfully parsed.");
 
             this.api = new ApiDefinition();
